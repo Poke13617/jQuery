@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            height:50px;
+        width:50px;
+    border: solid 1px black;
+position: relative;
+background-color:gray
+}
+#animate{
+    margin-bottom:5px;
+    margin-left:45%;
+}
+button{margin-bottom: 5px;
+margin-left: 15%}
+    </style>
+</head>
+<body>
+    <button id = "animate">Initiate Animation</button>
+    <div id = "box"></div>
+    <script>
+        $("#animate").click(function(){
+            //Animations that occur one after another are queued
+            //Animations will occur ONE by ONE!
+            $("#box").animate({height:"300px", width:"300px"}, "slow");
+            //The item being moved must be in position relative or absolute!
+            $("#box").animate({left: "400px"}, "slow");
+            $("#box").animate({left:"0px"}, "slow");
+        });
+        //see what happens if you click the button after running the animation! Why is that?
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        div{
+            margin-left:40%;
+            margin-top: 30%;
+            height: 50px;
+            width: 50px;
+            border: solid 1px black;
+            background-color:gray;
+        }
+        button{
+            margin-bottom:5px;
+            margin:15%;
+        }
+    </style>
+</head>
+<body>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+    <div></div>
+
+    <script>
+        //Try clicking all three button in different orders to see how these functions work!
+        $("#hide").click(function(){
+            $("div").hide("slow");
+        })
+        $("#show").click(function(){
+            $("div").show("slow");
+        })
+        $("#toggle").click(function(){
+            $("div").toggle("slow");
+        })
+    </script>
+</body>
+</html>

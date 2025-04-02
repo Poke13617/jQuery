@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h3>Open the console!</h3>
+
+    <ul>
+        <li>Do Homework</li>
+        <li>Read</li>
+        <li>Eat Dinner</li>
+        <li>Watch TV</li>
+        <li>Sleep</li>
+    </ul>
+    <script>
+        console.log("Iterating using each:");
+        $("li").each(function(index){
+            var toDo = $(this).text();
+            //check the console to see the results!
+            //The index starts at 0, like with most iterations
+            console.log(index + ". " + toDo);
+        });
+        </script>
+</body>
+</html>

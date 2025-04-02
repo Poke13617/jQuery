@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>.animate grow</title>
+    <style>
+        div{
+            height:50px;
+            width:50px;
+            border: solid 1px black;
+            position: relative;
+            background-color:gray;
+        }
+        #grow{
+            margin-bottom:5px;
+            margin-left:45%
+        }
+        #animate{
+            margin-bottom:5px;
+            margin-left:45%;
+}
+        button{margin-bottom: 5px;
+        margin-left: 15%}
+    </style>
+</head>
+<body>
+    <button id = grow>Grow!</button>
+    <div id="box2"></div>
+
+
+    <button id = "animate">Initiate Animation</button>
+    <div id = "box"></div>
+
+
+
+
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+    <div id="box3"></div>
+    <script>
+        $("#grow").click(function(){
+            //Notice how the parameters are written:
+            $("#box2").animate({height:"300px", width:"300px"}, "slow");
+        })
+
+
+        $("#animate").click(function(){
+            //Animations that occur one after another are queued
+            //Animations will occur ONE by ONE!
+            $("#box").animate({height:"300px", width:"300px"}, "slow");
+            $("#box").animate({height: "50px", width: "50px"}, "slow");
+            //The item being moved must be in position relative or absolute!
+            $("#box").animate({left: "400px"}, "slow");
+            $("#box").animate({left:"0px"}, "slow");
+        });
+        //see what happens if you click the button after running the animation! Why is that?
+   
+   
+   
+            //Try clicking all three button in different orders to see how these functions work!
+        $("#hide").click(function(){
+            $("#box3").hide("slow");
+        })
+        $("#show").click(function(){
+            $("#box3").show("slow");
+        })
+        $("#toggle").click(function(){
+            $("#box3").toggle("slow");
+        })
+   </script>
+</body>
+</html>
