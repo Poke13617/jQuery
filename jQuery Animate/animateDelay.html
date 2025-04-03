@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js></script>
+    <style>
+        div{
+            height:50px;
+            width:50px;
+            border:solid 1px black;
+            background-color:gray;
+        }
+        #grow{
+            margin-bottom:5px;
+            margin-left:45%
+        }
+    </style>
+</head>
+<body>
+    <h3>Look at the comments in the script to fix this program!</h3>
+    <button id = grow>Grow!</button>
+    <div></div>
+
+    <script>
+        $("#grow").click(function(){
+            //Notice how the parameters are written:
+            //The alert line executes before the end of the animation
+            //and halts the animation from occurring visually.
+
+            growIncorrectly();
+
+            //uncomment growCorrectly() below and comment out growIncorrectly() to implement a callback function
+
+            //growCorrectly();
+        });
+        function growIncorrectly(){
+            $("div").animate({height: "300px", width: "300px"}, "slow");
+            alert("The animation is complete!")
+        }
+
+        function growCorrectly(){
+            $("div").animate({height: "300px", width: "300px"}, "slow", function(){
+                alert("The animation is complete!")
+            });
+        }
+    </script>
+</body>
+</html>

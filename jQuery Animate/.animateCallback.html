@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .move{
+            height:50px;
+            width:50px;
+            border: solid 1px black;
+
+            background-color: gray;
+            margin:5px;
+            position:relative;
+            color:white;
+        }
+        #grow{
+            margin-bottom:5px;
+            margin-left:25%;
+        }
+    </style>
+</head>
+<body>
+    <button id="grow">Move!</button>
+    <div class="move"></div>
+    <div class="move"></div>
+    <div class="move"></div>
+    <div class="move"></div>
+    <div class="move"></div>
+    <div class="move"></div>
+    <script>
+        $("#grow").click(function(){
+            $('.move').animate({left:"300px"}, "slow", function(){
+
+                //Each element selected in an animation
+                //will cause the callback function to execute!
+                $(this).text("Done!");
+            });
+        })
+    </script>
+</body>
+</html>
